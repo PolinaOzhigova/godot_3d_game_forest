@@ -1,0 +1,11 @@
+Model Information:
+* title:	salmon Fish
+* source:	https://sketchfab.com/3d-models/salmon-fish-b8778f50bdc74902b1aff81dc60df10f
+* author:	patroo (https://sketchfab.com/patroo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "salmon Fish" (https://sketchfab.com/3d-models/salmon-fish-b8778f50bdc74902b1aff81dc60df10f) by patroo (https://sketchfab.com/patroo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

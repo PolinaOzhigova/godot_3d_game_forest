@@ -1,0 +1,11 @@
+Model Information:
+* title:	A soviet milk bottle.
+* source:	https://sketchfab.com/3d-models/a-soviet-milk-bottle-5d2fa3a3260d4a4d96165c4b29880e24
+* author:	Valger (https://sketchfab.com/Valger)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "A soviet milk bottle." (https://sketchfab.com/3d-models/a-soviet-milk-bottle-5d2fa3a3260d4a4d96165c4b29880e24) by Valger (https://sketchfab.com/Valger) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

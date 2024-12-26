@@ -1,10 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://sw2g6pmx2fwj"]
+[gd_scene load_steps=38 format=3 uid="uid://sw2g6pmx2fwj"]
 
 [ext_resource type="Script" path="res://character_body_3d.gd" id="1_1bx4e"]
 [ext_resource type="PackedScene" uid="uid://bkj68gh77wvol" path="res://Assets/toon_cat_free/scene.gltf" id="2_b84c5"]
-[ext_resource type="Script" path="res://node_3d.gd" id="3_2pml3"]
 [ext_resource type="PackedScene" uid="uid://be1quvml0txl" path="res://Assets/camping_buscraft_ambience1/scene.gltf" id="3_ji70d"]
+[ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_rui4s"]
 [ext_resource type="Script" path="res://forest.gd" id="4_11kgd"]
+[ext_resource type="Texture2D" uid="uid://dtcrslgvckw13" path="res://Assets/fire_grey.png" id="6_6n4wq"]
+[ext_resource type="AudioStream" uid="uid://vcfpye0af0wv" path="res://Assets/blackbird-in-forest-23997.mp3" id="7_avtwr"]
+[ext_resource type="PackedScene" uid="uid://bgagd6jxgijib" path="res://Assets/a_soviet_milk_bottle/scene.gltf" id="7_fnpsa"]
+[ext_resource type="PackedScene" uid="uid://cugrfho6pe23c" path="res://Assets/condensed_milk_from_ussr/scene.gltf" id="8_7b5cx"]
+[ext_resource type="Script" path="res://Interact.gd" id="8_48ktu"]
+[ext_resource type="PackedScene" uid="uid://c8hkjrsndunus" path="res://Assets/egg_and_sausage/scene.gltf" id="9_2in68"]
+[ext_resource type="PackedScene" uid="uid://bnpntoeq16py7" path="res://Assets/salmon_fish/scene.gltf" id="10_kd6a2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_au1n8"]
 sky_top_color = Color(2.88785e-07, 0.467394, 0.741247, 1)
@@ -16,24 +23,27 @@ sky_material = SubResource("ProceduralSkyMaterial_au1n8")
 [sub_resource type="Environment" id="Environment_ew0r5"]
 background_mode = 2
 sky = SubResource("Sky_fs6l1")
-tonemap_mode = 2
-tonemap_exposure = 0.4
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_exposure = 2.01
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_dlo20"]
-height = 0.738208
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lc2x7"]
+height = 0.538849
+radius = 0.277293
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jjvfo"]
 margin = 0.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kxjln"]
-height = 4.17897
-radius = 0.302654
+height = 3.26077
+radius = 0.243535
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_thnux"]
-height = 5.59544
-radius = 0.368346
+height = 2.88696
+radius = 0.290601
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yp182"]
+height = 1.18467
+radius = 0.278896
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uxmx4"]
 height = 6.5053
@@ -43,22 +53,28 @@ radius = 2.33302
 size = Vector3(0.870605, 1, 1.4657)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_donvs"]
-size = Vector3(1, 0.308594, 1)
+size = Vector3(0.992676, 0.267883, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3pis8"]
-radius = 0.637043
+radius = 0.352867
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmx6q"]
+blend_mode = 1
+cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("6_6n4wq")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_b1bq0"]
+lightmap_size_hint = Vector2i(2, 2)
 material = SubResource("StandardMaterial3D_tmx6q")
-size = Vector2(0.15, 0.15)
+size = Vector2(0.1, 0.1)
 
 [sub_resource type="Curve" id="Curve_x2sa3"]
 min_value = 0.5
@@ -66,8 +82,43 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_4oacp"]
-offsets = PackedFloat32Array(0, 0.3, 0.566667, 0.726667, 0.886667, 1)
-colors = PackedColorArray(0.945098, 0, 0, 1, 0.900968, 0.451778, 0, 1, 0.262745, 0.25098, 0.235294, 1, 0.454902, 0.447059, 0.435294, 0.890196, 0.756863, 0.752941, 0.74902, 0, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.515528, 0.801242, 0.931677)
+colors = PackedColorArray(0.945098, 0, 0, 1, 0.900968, 0.451778, 0, 1, 0.349075, 0.334576, 0.315251, 1, 0.454902, 0.447059, 0.435294, 0.741176)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tdgjr"]
+radius = 0.159156
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ip723"]
+height = 1.27717
+radius = 0.983251
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kqmum"]
+height = 0.385678
+radius = 0.281143
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3y71u"]
+radius = 0.299003
+height = 3.5621
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ox7kt"]
+radius = 0.400242
+height = 2.8607
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0fg0w"]
+radius = 1.09453
+height = 5.28241
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ge6b3"]
+radius = 1.88866
+height = 6.75056
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bmwi"]
+radius = 0.0753865
+height = 0.525566
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2jw4j"]
+radius = 0.117442
+height = 0.500694
 
 [node name="Main" type="Node3D"]
 
@@ -75,23 +126,39 @@ colors = PackedColorArray(0.945098, 0, 0, 1, 0.900968, 0.451778, 0, 1, 0.262745,
 environment = SubResource("Environment_ew0r5")
 
 [node name="Player" type="XROrigin3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98812, 0, 2.95277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98812, -0.0739544, 2.95277)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="WorldEnvironment/Player"]
 script = ExtResource("1_1bx4e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Player/CharacterBody3D"]
-transform = Transform3D(-0.928018, 0, 0.372534, 0, 1, 0, -0.372534, 0, -0.928018, 0, 0.32, 0)
-shape = SubResource("CylinderShape3D_dlo20")
+transform = Transform3D(-0.833885, 0, 0.551937, 0, 1, 0, -0.551937, 0, -0.833885, -0.0160599, 0.29199, -0.0272949)
+shape = SubResource("CylinderShape3D_lc2x7")
 
 [node name="Sketchfab_Scene" parent="WorldEnvironment/Player/CharacterBody3D/CollisionShape3D" instance=ExtResource("2_b84c5")]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, -0.347255, 0)
+transform = Transform3D(0.00195259, 0, 0.000432879, 0, 0.002, 0, -0.000432879, 0, 0.00195259, -0.0182314, -0.278611, -0.00293994)
 
-[node name="Node3D" type="Node3D" parent="WorldEnvironment/Player/CharacterBody3D"]
-script = ExtResource("3_2pml3")
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment/Player/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.907777, 0.419452, 0, -0.419452, 0.907777, 0, 1.431, 0.993164)
 
-[node name="Camera3D" type="Camera3D" parent="WorldEnvironment/Player/CharacterBody3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.894895, 0.446276, 0, -0.446276, 0.894895, 0, 1.47904, 1.05323)
+[node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment/Player/CharacterBody3D/Camera3D"]
+target_position = Vector3(0, 0, -3.5)
+script = ExtResource("3_rui4s")
+
+[node name="Label" type="Label" parent="WorldEnvironment/Player/CharacterBody3D/Camera3D/RayCast3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -61.0
+offset_right = 204.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="eNV" type="StaticBody3D" parent="WorldEnvironment"]
 collision_mask = 3
@@ -104,18 +171,19 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_jjvfo")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
-transform = Transform3D(-0.140144, -0.487056, 0.862054, -0.987865, 0.00990729, -0.154999, 0.0669526, -0.873315, -0.482533, 4.26848, 0.18417, 0.0590141)
+transform = Transform3D(-0.140144, -0.487056, 0.862054, -0.987865, 0.00990729, -0.154999, 0.0669526, -0.873315, -0.482533, 4.50276, 0.18417, 0.373423)
 shape = SubResource("CylinderShape3D_kxjln")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
-transform = Transform3D(0.0160976, 0.907701, 0.419309, -0.999843, 0.0177316, 0, -0.00743505, -0.419244, 0.907843, 1.37095, 0.443368, 4.84844)
+transform = Transform3D(0.0160976, 0.907701, 0.419309, -0.999843, 0.0177316, 0, -0.00743505, -0.419244, 0.907843, 2.69567, 0.168714, 4.19265)
 shape = SubResource("CylinderShape3D_thnux")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
-transform = Transform3D(-0.0100504, 0.999199, -0.0387448, 0.250888, 0.0400271, 0.967188, 0.967964, 0, -0.25109, 4.80331, 0.159155, 3.81906)
+transform = Transform3D(-0.0100504, 0.999199, -0.0387448, 0.250888, 0.0400271, 0.967188, 0.967964, 0, -0.25109, 4.78744, 0.178068, 3.81541)
 shape = SubResource("CylinderShape3D_yp182")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0825386, 0.0724163, -0.0552635)
 shape = SubResource("CylinderShape3D_uxmx4")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
@@ -123,27 +191,140 @@ transform = Transform3D(0.88722, 0, -0.461346, 0, 1, 0, 0.461346, 0, 0.88722, 2.
 shape = SubResource("BoxShape3D_ggcs1")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
-transform = Transform3D(0.642146, 0, -0.766583, 0, 1, 0, 0.766583, 0, 0.642146, 3.48619, 0.0731195, 0.872565)
+transform = Transform3D(0.642146, 0, -0.766583, 0, 1, 0, 0.766583, 0, 0.642146, 3.48854, 0.0527642, 0.875372)
 shape = SubResource("BoxShape3D_donvs")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
-transform = Transform3D(0.72001, 0.461688, 0.518102, -0.539785, 0.841803, 0, -0.436139, -0.279663, 0.855319, 3.7827, 0.923602, 0.0209671)
+transform = Transform3D(0.72001, 0.461688, 0.518102, -0.539785, 0.841803, 0, -0.436139, -0.279663, 0.855319, 3.9158, -0.00867438, 0.0209671)
 shape = SubResource("CapsuleShape3D_3pis8")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="WorldEnvironment/eNV"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89764, 0.462669, 1.75592)
-amount = 20
-lifetime = 2.0
+amount = 40
+lifetime = 1.5
+speed_scale = 0.7
 mesh = SubResource("QuadMesh_b1bq0")
 emission_shape = 3
-emission_box_extents = Vector3(0.3, 0.2, 0.3)
+emission_box_extents = Vector3(0.15, 0.2, 0.15)
 direction = Vector3(0, 0, 0)
-gravity = Vector3(0, 1, 0)
+spread = 40.0
+gravity = Vector3(0, 0.7, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.0
 scale_amount_curve = SubResource("Curve_x2sa3")
 color = Color(1, 1, 1, 0)
 color_ramp = SubResource("Gradient_4oacp")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(-0.758928, 0.587858, -0.280092, -0.301947, 0.063403, 0.951214, 0.576938, 0.806476, 0.129384, 8.82032, 0.0711273, 0.485282)
+shape = SubResource("CylinderShape3D_tdgjr")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349706, -0.0435951, 6.51677)
+shape = SubResource("CylinderShape3D_ip723")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68745, 0.278658, -5.61917)
+shape = SubResource("CylinderShape3D_ip723")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58878, -0.0435961, -0.8801)
+shape = SubResource("CylinderShape3D_ip723")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63936, 0.218754, 8.38429)
+shape = SubResource("CylinderShape3D_kqmum")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276255, 0, 9.42338)
+shape = SubResource("CapsuleShape3D_3y71u")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47744, 0, 5.29496)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9145, 0, -2.07864)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27926, 0, -6.31114)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31075, 0, -5.62336)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05591, 0, 6.09031)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82384, 0, -2.94631)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06959, 0, 1.51516)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03592, 0, 3.84875)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.05514, 0, -2.59671)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68675, 0, -7.30318)
+shape = SubResource("CapsuleShape3D_ox7kt")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(0.0256423, 0.97924, -0.201078, -0.999657, 0.026177, 0, 0.00526362, 0.201009, 0.979575, 3.0969, -0.615718, 9.77421)
+shape = SubResource("CapsuleShape3D_0fg0w")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="WorldEnvironment/eNV"]
+transform = Transform3D(-0.024805, -0.346048, -0.937889, 0.997441, -0.0714975, 0, -0.0670567, -0.935489, 0.346936, -8.80992, -0.92368, 6.33674)
+shape = SubResource("CapsuleShape3D_ge6b3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment"]
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/StaticBody3D"]
+
+[node name="eggs" parent="WorldEnvironment" instance=ExtResource("9_2in68")]
+transform = Transform3D(0.145443, 0, 0.262386, 0, 0.3, 0, -0.262386, 0, 0.145443, -9.77234, 0.664254, 7.926)
+script = ExtResource("8_48ktu")
+interact_promt = "Сьешь сосиски"
+
+[node name="fish" parent="WorldEnvironment" instance=ExtResource("10_kd6a2")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6.18965, -0.0269662, -2.85764)
+script = ExtResource("8_48ktu")
+interact_promt = "Рыбонька"
+
+[node name="birds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_avtwr")
+volume_db = -10.0
+autoplay = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44312, 0, 4.8465)
+shape = SubResource("CapsuleShape3D_1bmwi")
+
+[node name="milk" parent="StaticBody3D/CollisionShape3D" instance=ExtResource("7_fnpsa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000178337, -4.76837e-07, -0.0122771)
+script = ExtResource("8_48ktu")
+interact_promt = "Drink milk"
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.359185, 0, -2.80428)
+shape = SubResource("CapsuleShape3D_2jw4j")
+
+[node name="sugar_milk" parent="StaticBody3D2/CollisionShape3D" instance=ExtResource("8_7b5cx")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.013864, 0, 0.0100691)
+script = ExtResource("8_48ktu")
+interact_promt = "Eat milk))"

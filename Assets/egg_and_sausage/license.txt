@@ -1,0 +1,11 @@
+Model Information:
+* title:	Egg and Sausage
+* source:	https://sketchfab.com/3d-models/egg-and-sausage-0836af0bceab4fa3aa71357d37ae09e2
+* author:	Vie Dinh (https://sketchfab.com/yenvydinh2295)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Egg and Sausage" (https://sketchfab.com/3d-models/egg-and-sausage-0836af0bceab4fa3aa71357d37ae09e2) by Vie Dinh (https://sketchfab.com/yenvydinh2295) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

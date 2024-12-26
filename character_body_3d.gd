@@ -9,6 +9,7 @@ const GRAVITY = 0.98
 
 func _ready() -> void:
 	anim.get_animation("Scene")
+	
 	anim.play("Scene")
 
 func _physics_process(delta: float) -> void:
